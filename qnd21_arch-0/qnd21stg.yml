@@ -23,14 +23,14 @@ services:
    # command: sh -c "chmod +x /scripts/migrations.sh && sh /scripts/migrations.sh && sh /scripts/run.sh"
 
   qnode21_proxy:
-    image: smartquail/qnd21_nginx:dev
+    image: smartquail/qnode21_nginx:dev
     restart: always
     env_file:
       - .env_stage
     environment:
       - PORT=80
     depends_on:
-      - qnd20_app_stg
+      - qnd21_app_stg
     ports:
       - "80:80"
       - "443:443"

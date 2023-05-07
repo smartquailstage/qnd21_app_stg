@@ -84,6 +84,7 @@ INSTALLED_APPS = [
     #'webapp_0',
     #'streams',
     'widget_tweaks',
+    'webapp_0',
    #SMARTQUAIL-BUSINESS-CONSULTING
     #'shop',
     #'coupons',
