@@ -1,0 +1,41 @@
+name: SmartQuail Docker Build Apps QND21
+
+on:
+  workflow_call:
+  workflow_dispatch:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+ 
+jobs:
+  test_qnd20_app_stg:
+    uses: smartquailstage/qnd21_app_stg/.github/workflows/test-qnd21_app_stg.yaml@main
+  Docker_qnd20:
+    runs-on: ubuntu-latest
+    needs: [test_qnd21_app_stg]
+    env:
+      DJANGO_SECRET_KEY: test-key-not-good
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3 
+    - name: Login to Docker Hub
+      uses: docker/login-action@v1
+      with:
+        username: ${{ secrets.DOCKER_HUB_USERNAME }}
+        password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+    - name: Build container image
+      working-directory: ./qnd2.1_stg_dock
+      run: | 
+        docker build -f Dockerfile \
+            -t smartquail/qnd21_app_stg:latest \
+            -t smartquail/qnd21_app_stg:${GITHUB_SHA::2}-${GITHUB_RUN_ID::2} \
+            .
+    - name: Push Image
+      run: | 
+        docker push smartquail/qnd21_app_stg --all-tags
+   
+
+       
+
+   
