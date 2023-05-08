@@ -8,35 +8,72 @@
 <header class="header slider-fade">
     <div class="owl-carousel owl-theme">
         <!-- The opacity on the image is made with "data-overlay-dark="number". You can change it using the numbers 0-9. -->
-        <div class="text-start item bg-img" data-overlay-dark="3" data-background="{% static 'img/slider/1.jpg' %}">
+        {% for item in page.galleria.all %}
+        {% image item.image scale-100 as s1 %}
+        <div class="text-start item bg-img" data-overlay-dark="3" data-background="{{s1.url}}">
             <div class="v-middle caption mt-30">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-7">
                             <h1>{{page.banner_title4}}</h1>
                             <p>{{ page.TS_info1 }}
-                                <br>Curabitur viverra the posuere aukue velit.
+                                <br>{{page.info1}}
                             </p>
-                            <div class="butn-light mt-30 mb-30"> <a href="https://1.envato.market/mDnXD" target="_blank"><span>Ingresar</span></a> </div>
+                            <div class="butn-light mt-30 mb-30"> <a href="https://1.envato.market/mDnXD" target="_blank"><span>Explorar</span></a> </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="text-left item bg-img" data-overlay-dark="4" data-background="{% static 'img/slider/2.jpg' %}">
+        {% image item.image_2 scale-100 as s2 %}
+        <div class="text-left item bg-img" data-overlay-dark="4" data-background="{{s2.url}}">
             <div class="v-middle caption mt-30">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-7">
-                            <h1>Innovate Desing in Canada</h1>
-                            <p>Architecture viverra tellus nec massa dictum the euismoe.
-                                <br>Curabitur viverra the posuere aukue velit.
+                            <h1>{{page.banner_title5}}</h1>
+                            <p>{{ page.TS_info2 }}
+                                <br>{{page.info2}}
                             </p>
-                            <div class="butn-light mt-30 mb-30"> <a href="https://1.envato.market/mDnXD" target="_blank"><span>Buy Now</span></a> </div>
+                            <div class="butn-light mt-30 mb-30"> <a href="https://1.envato.market/mDnXD" target="_blank"><span>Explorar</span></a> </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        {% image item.image_3 scale-100 as s3 %}
+        <div class="text-left item bg-img" data-overlay-dark="4" data-background="{{s3.url}}">
+            <div class="v-middle caption mt-30">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-7">
+                            <h1>{{page.banner_title6}}</h1>
+                            <p>{{ page.TS_info3 }}
+                                <br>{{page.info3}}
+                            </p>
+                            <div class="butn-light mt-30 mb-30"> <a href="https://1.envato.market/mDnXD" target="_blank"><span>Explorar</span></a> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% image item.image_4_2 scale-100 as s4 %}
+        <div class="text-left item bg-img" data-overlay-dark="4" data-background="{{s4.url}}">
+            <div class="v-middle caption mt-30">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-7">
+                            <h1>{{page.banner_title7}}</h1>
+                            <p>{{ page.TS_info4 }}
+                                <br>{{page.info4}}
+                            </p>
+                            <div class="butn-light mt-30 mb-30"> <a href="https://1.envato.market/mDnXD" target="_blank"><span>Explorar</span></a> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        
     </div>
 </header>

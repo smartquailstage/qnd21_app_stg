@@ -60,6 +60,10 @@ class Index(AbstractEmailForm):
     TS_info3 = models.CharField(max_length=150, null=True, blank=True,verbose_name='Subtitulo-Slide-3')
     TS_info4 = models.CharField(max_length=150, null=True, blank=True,verbose_name='Subtitulo-Slide-4')
 
+    info1 = models.CharField(max_length=150, null=True, blank=True,verbose_name='info-Slide-1')
+    info2 = models.CharField(max_length=150, null=True, blank=True,verbose_name='info-Slide-2')
+    info3 = models.CharField(max_length=150, null=True, blank=True,verbose_name='info-Slide-3')
+    info4 = models.CharField(max_length=150, null=True, blank=True,verbose_name='info-Slide-4')
     
     #Campos de Noticias
 
@@ -87,12 +91,16 @@ class Index(AbstractEmailForm):
         FieldPanel('bio', classname="full"),
         FieldPanel('banner_title4', classname="full"),
         FieldPanel('TS_info1', classname="full"),
+        FieldPanel('info1', classname="full"),
         FieldPanel('banner_title5', classname="full"),
         FieldPanel('TS_info2', classname="full"),
+        FieldPanel('info2', classname="full"),
         FieldPanel('banner_title6', classname="full"),
         FieldPanel('TS_info3', classname="full"),
+        FieldPanel('info3', classname="full"),
         FieldPanel('banner_title7', classname="full"),
-         FieldPanel('TS_info4', classname="full"),
+        FieldPanel('TS_info4', classname="full"),
+        FieldPanel('info4', classname="full"),
     #Tearsheet Info
         
         
