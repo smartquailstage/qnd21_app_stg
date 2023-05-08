@@ -13,6 +13,7 @@ location /media {
 }
 
 location / {
+    proxy_pass              http://127.0.0.1:1080/ ;
     uwsgi_pass              ${APP_HOST}:${APP_PORT};
     include                 /etc/nginx/uwsgi_params;
     client_max_body_size    1000M;

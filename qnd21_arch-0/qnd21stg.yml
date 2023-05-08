@@ -73,6 +73,8 @@ volumes:
   smartquaildb_data:
   redis_data:
   static-data-qnd21:
+  mail:
+
 
 networks: 
    lansmartquail:
